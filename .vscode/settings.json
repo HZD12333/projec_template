@@ -1,0 +1,17 @@
+{
+    "editor.formatOnSave": true,
+    "stylelint.enable": true,
+    "stylelint.validate": [
+        "css",
+        "less",
+        "scss",
+        "sass",
+        "vue"
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "always",
+        "source.fixAll.stylelint": "always" 
+    },
+    "editor.indentSize": 4,
+    "editor.detectIndentation": false,
+}

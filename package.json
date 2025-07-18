@@ -1,0 +1,65 @@
+{
+    "name": "project",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "lint": "pnpm run lint:js && pnpm run lint:style",
+        "lint:js": "eslint . --ext ts,tsx,js src --fix --report-unused-disable-directives --max-warnings 0",
+        "preview": "vite preview",
+        "prepare": "husky install",
+        "lint:commit": "lint-staged",
+        "lint:style": "stylelint \"./**/*.{css,less,scss,sass}\" --fix --cache --cache-location node_modules/.cache/stylelint/ --ignore-path .gitignore"
+    },
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@commitlint/config-conventional": "^18.4.2",
+        "@types/node": "^20.14.14",
+        "@types/react": "^18.2.15",
+        "@types/react-dom": "^18.2.7",
+        "@typescript-eslint/eslint-plugin": "^6.0.0",
+        "@typescript-eslint/parser": "^6.0.0",
+        "@vitejs/plugin-legacy": "^4.1.1",
+        "@vitejs/plugin-react-swc": "^3.3.2",
+        "commitlint": "^18.4.2",
+        "eslint": "^8.45.0",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-plugin-react-refresh": "^0.4.3",
+        "eslint-plugin-simple-import-sort": "^10.0.0",
+        "husky": "^8.0.3",
+        "lint-staged": "^15.1.0",
+        "os": "^0.1.2",
+        "postcss": "^8.4.31",
+        "postcss-preset-env": "^10.0.0",
+        "postcss-scss": "^4.0.9",
+        "sass": "^1.69.5",
+        "stylelint": "^15.11.0",
+        "stylelint-config-standard": "^34.0.0",
+        "stylelint-config-standard-scss": "^11.1.0",
+        "stylelint-order": "^6.0.3",
+        "stylelint-scss": "^5.3.1",
+        "terser": "^5.31.3",
+        "typescript": "^5.0.2",
+        "vite": "^4.4.5",
+        "vite-bundle-analyzer": "^0.10.3",
+        "vite-plugin-checker": "^0.6.2",
+        "vite-plugin-compression": "^0.5.1",
+        "vite-plugin-progress": "^0.0.7",
+        "vite-plugin-restart": "^0.4.1",
+        "vite-plugin-windicss": "^1.9.1"
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
+    },
+    "lint-staged": {
+        "**/*.ts?(x)": "lint",
+        "**/*.tsx?(x)": "lint"
+    }
+}

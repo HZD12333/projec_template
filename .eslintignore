@@ -1,0 +1,10 @@
+**/*.scss
+**/*.css   //忽略scc文件检测
+# **/*.cjs
+**/webpack.config.js
+build/*.js
+public
+dist
+node_modules
+src/e2e/baseLayout.e2e.js
+.husky

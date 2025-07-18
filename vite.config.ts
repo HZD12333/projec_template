@@ -1,6 +1,5 @@
 import legacy from '@vitejs/plugin-legacy';
 import react from '@vitejs/plugin-react-swc';
-import browserslist from 'browserslist';
 import { resolve } from 'path';
 import postcssPresetEnv from 'postcss-preset-env';
 import { defineConfig, loadEnv } from 'vite';
@@ -16,7 +15,6 @@ import server from './scripts/server';
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
     const viteEnv = loadEnv(mode, process.cwd(), '');
-    const browserslistConfig = browserslist.loadConfig({ path: '.' });
     return   {
         plugins: [
             react(),
@@ -32,7 +30,6 @@ export default defineConfig(({ mode }) => {
                 deleteOriginFile: true // 源文件压缩后是否删除(我为了看压缩后的效果，先选择了true)
             }),
             legacy({
-                targets: browserslistConfig,
                 additionalLegacyPolyfills: [ 'regenerator-runtime/runtime' ], // 面向IE11时需要此插件
             }),
             ViteRestart({

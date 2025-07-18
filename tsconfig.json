@@ -17,12 +17,12 @@
     "paths": {
       "@":["./src/*"]
     },
-
-    "types": ["vite/client"],
+    "typeRoots": ["./type", "./node_modules/@types"],
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "esModuleInterop": true,
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src", "./type/index.d.ts", "scripts/*.ts"],
